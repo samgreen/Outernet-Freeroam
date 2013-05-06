@@ -29,21 +29,21 @@ enum this.E_WEAPON_SET {
 };
 
 enum this.E_SPAWN_LOCATION {
-	      Interior,
-	      World,
+	Interior,
+	World,
 	Float:X, Float:Y, Float:Z,
 	Float:Rot,
 	Group:Group,
-	      Team,
-	      WeaponSet
+	Team,
+	WeaponSet
 };
 
 enum this.E_CLASS {
-	      Skin,
-	      SpawnLocation,
-	      WeaponSet,
-	      World,
-	      Team,
+	Skin,
+	SpawnLocation,
+	WeaponSet,
+	World,
+	Team,
 	Group:Group
 };
 

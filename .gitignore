@@ -34,5 +34,5 @@ server.cfg
 /include/time.inc
 compiler.lock
 /gamemodes/.build
-/gamemodes/modules/*
+
 !/gamemodes/modules/PBP
