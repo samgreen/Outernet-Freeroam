@@ -158,6 +158,7 @@ class PAWNC {
 			trigger_error("The arg \"-i\" may not be explicitly set. Use include_dir property instead.", E_USER_WARNING);
 		
 		$this->args['o'] = $this->output_file;
+		$this->args['d'] = 3;
 		
 		if (!empty($this->include_dir))
 			$this->args['i'] = $this->include_dir;

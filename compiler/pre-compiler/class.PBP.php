@@ -527,7 +527,7 @@ EOD;
 		else
 			$public_functions = <<<EOD
 
-main() {}
+main() { return 1; }
 
 EOD;
 		
@@ -541,12 +541,14 @@ EOD;
 				$pub = '';
 			} else {
 				$pub = 'public ';
+
+				// echo $callback . ' ';
 				
 				$public_functions .= <<<EOD
 
-#if !defined $callback
-	#error Callback  "$callback" is used, but not defined. Did you forget to include it?
-#endif
+//#if !defined $callback
+//	#error Callback  "$callback" is used, but not defined. Did you forget to include it?
+//#endif
 
 EOD;
 			}
@@ -836,7 +838,7 @@ EOD;
 			return;
 		
 		if (file_exists('gamemodes/main.pwn'))
-			unlink('gamemodes/main.pwn');
+			// unlink('gamemodes/main.pwn');
 		
 		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('gamemodes/.build'), RecursiveIteratorIterator::CHILD_FIRST);
 		

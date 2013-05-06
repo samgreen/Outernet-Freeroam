@@ -1,7 +1,7 @@
 /*!
- * PBP/Users/callbacks/OnPlayerLogIn.inc
+ * PBP/Users/callbacks/OnPlayerLogin.inc
  *
- * OnPlayerLogIn(playerid, bool:autologin)
+ * OnPlayerLogin(playerid, yid)
  *
  > Priority: 10
  */
@@ -15,10 +15,10 @@
 		ShowPlayerDialog(playerid, -1, 0, NULL, NULL, NULL, NULL);
 	}
 	
-	if (autologin)
-		SendClientMessage(playerid, COLOR_GENERIC_INFO, @"* You were automatically logged in.");
-	else
-		Dialog_Show(playerid, DIALOG_STYLE_MSGBOX, @"Success", @"You are now logged in!", @"Cool");
+	// if (true)
+	SendClientMessage(playerid, COLOR_GENERIC_INFO, @"* You were automatically logged in.");
+	// else
+	// 	Dialog_Show(playerid, DIALOG_STYLE_MSGBOX, @"Success", @"You are now logged in!", @"Cool");
 	
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	
