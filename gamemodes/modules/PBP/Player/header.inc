@@ -8,6 +8,7 @@ enum e_PLAYER_INFO {
 	      IP,
 	 bool:IsAdmin,
 	      Name[MAX_PLAYER_NAME],
+	      Level,
 	Float:X, Float:Y, Float:Z,
 	Float:Rot,
 	Float:Health,
