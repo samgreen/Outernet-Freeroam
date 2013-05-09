@@ -8,6 +8,8 @@
 // 1959.5157,-2624.7688,13.5469 // LS Airport (Race Finish)
 
 stock this.Setup() {
+	if (this.active) return 1;
+	
 	this.SpawnCars();
 
 	this.active = true;
@@ -21,6 +23,16 @@ stock this.Teardown() {
 
 stock this.SetupCheckpoints() {
 
+}
+
+stock this.TeleportTo(playerid) {
+    // If this is the first player, we need to setup the game
+    if (!this.active) this.Setup();
+
+    PlayerSetPos(playerid, -2465.5481, 2247.0857, 4.5688);
+
+
+    SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the Gumball minigame.");
 }
 
 stock this.SpawnCars() {
@@ -55,4 +67,6 @@ stock this.RemoveCars() {
 	for (new i = 0; i < this.MAX_VEHICLES; i++) {
 		DestroyVehicle(this.GUMBALL_VEHICLES[i]);
 	}
+	// Reset vehicle count
+	this.vehicleCount = 0;
 }

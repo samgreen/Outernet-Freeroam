@@ -55,11 +55,11 @@ YCMD:join(playerid, params[], help) {
     }
 
     if (strcmp(gameName, "OJ", true)) {
-        SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the OJ minigame.");
+        OJ.TeleportTo(playerid);
     } else if (strcmp(gameName, "King", true)) {
-        SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the King of the Hill minigame.");
+        King.TeleportTo(playerid);
     } else if (strcmp(gameName, "Gumball", true)) {
-        SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the Gumball minigame.");
+        Gumball.TeleportTo(playerid);
     }
 
     return 1;

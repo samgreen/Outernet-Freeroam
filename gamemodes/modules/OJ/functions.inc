@@ -5,6 +5,8 @@
  */
 
 stock this.Setup() {
+	if (this.active) return 1;
+
 	this.SpawnCars();
 
 	// Enable global markers for all players
@@ -21,8 +23,13 @@ stock this.Teardown() {
 }
 
 stock this.TeleportTo(playerid) {
+	// If this is the first player, set up the game
+	if (!this.active) this.Setup();
+
 	// OJ Spawn point
 	SetPlayerPos(playerid, -353.8105, 1531.0774, 75.3594);
+
+	SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the OJ minigame.");
 }
 
 stock this.SpawnCars() {
@@ -71,8 +78,9 @@ stock this.GetOJCar() {
 }
 
 stock this.RemoveCars() {
-	for (new i = 0; i < this.MAX_VEHICLES; i++) {
+	for (new i = 0; i < this.vehicleCount; i++) {
 		DestroyVehicle(this.OJ_VEHICLES[i]);
 	}
+	this.vehicleCount = 0;
 }
 
