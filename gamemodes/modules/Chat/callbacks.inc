@@ -1,5 +1,6 @@
 /*!
- * Freeroam/functions.inc
+ * Chat/callbacks.inc
  *
  > Priority: 0
  */
+

@@ -1,5 +1,5 @@
 /*!
- * Freeroam/functions.inc
+ * Chat/commands.inc
  *
  > Priority: 0
  */
