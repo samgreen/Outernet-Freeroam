@@ -140,3 +140,9 @@
 "You become infused with the spirit of the bear, your next successful attack will always be a fatal blow." = "You become infused with the spirit of the bear, your next successful attack will always be a fatal blow."
 
 "Summon a mighty steed and ride forth in to battle." = "Summon a mighty steed and ride forth in to battle."
+
+"/givegun [Part of name or PlayerID] [Weapon name/ID]" = "/givegun [Part of name or PlayerID] [Weapon name/ID]"
+
+"/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]" = "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]"
+
+"/goto [Part of name or PlayerID]" = "/goto [Part of name or PlayerID]"

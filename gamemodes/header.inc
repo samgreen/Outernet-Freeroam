@@ -84,6 +84,8 @@ const PBP.DEFAULT_RETURN<OnPlayerCommandText> = 0;
 #include "lib\util"
 #include "lib\samp"
 
+#define AMMO        (65000)
+
 // gpci
 native GetPlayerClientId(playerid, output[], maxlen = sizeof(output)) = gpci;
 

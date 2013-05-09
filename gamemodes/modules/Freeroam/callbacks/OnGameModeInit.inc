@@ -1,5 +1,5 @@
 /*!
- * WizardsAndDragons/callbacks/OnGameModeInit.inc
+ * Freeroam/callbacks/OnGameModeInit.inc
  *
  * OnGameModeInit()
  *
@@ -7,6 +7,5 @@
  */
 
 {
-	// Set the gamemode's name to MODE_NAME and version information (from gamemodes/header.inc).
-	SetGameModeText(MODE_NAME " v" #SCRIPT_VERSION_MAJOR "." #SCRIPT_VERSION_MINOR "." #SCRIPT_VERSION_BUILD);
+	AddPlayerClass(0, 100.5171, 1104.9548, 13.6094, 221.8533, 0, 0, 0, 0, 0, 0);
 }

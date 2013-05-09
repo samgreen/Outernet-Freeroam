@@ -498,6 +498,7 @@ SSCANF:vehicle(string[])
 	else if (!strcmp(string, "Boxville")) return 609;
 	else if (!strcmp(string, "Farm Trailer")) return 610;
 	else if (!strcmp(string, "Utility Trailer")) return 611;
+	
 	return -1;
 }
 
