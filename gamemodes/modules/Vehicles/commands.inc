@@ -51,6 +51,11 @@ YCMD:paint(playerid, params[], help) {
 
 CommandDescription<nos> = @"Add nitrous to your vehicle.";
 YCMD:nos(playerid, params[], help) {
+    if (OJ.active) {
+        SendClientMessage(playerid, COLOR_COMMAND_ERROR, "You may not use NOS while the OJ minigame is active.");
+        return 1;
+    }
+
     new vehicleID = GetPlayerVehicleID(playerid);
     if (vehicleID == 0) {
         SendClientUsage(playerid, "You must be in a vehicle to add NOS.");
@@ -65,6 +70,11 @@ YCMD:nos(playerid, params[], help) {
 
 CommandDescription<fix> = @"Fully repair your vehicle.";
 YCMD:fix(playerid, params[], help) {
+    if (OJ.active) {
+        SendClientMessage(playerid, COLOR_COMMAND_ERROR, "You may not repair your vehicle while the OJ minigame is active.");
+        return 1;
+    }
+
     new vehicleID = GetPlayerVehicleID(playerid);
     if (vehicleID == 0) {
         SendClientUsage(playerid, "You must be in a vehicle to repair it.");

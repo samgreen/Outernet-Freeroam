@@ -14,6 +14,8 @@ stock this.Setup() {
 
 stock this.Teardown() {
 	this.RemoveCars();
+	this.active = false;
+	this.playerOJ = -1;
 }
 
 stock this.TeleportTo(playerid) {

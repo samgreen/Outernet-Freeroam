@@ -4,7 +4,7 @@
  > Priority: 0
  */
 
-stock CanPlayerSpawnVehicle(playerid) {
+stock bool:CanPlayerSpawnVehicle(playerid) {
 	return (this.DYNAMIC_CARS[playerid][0] == 0 || this.DYNAMIC_CARS[playerid][1] == 0 || IsPlayerAdmin(playerid));
 }
 
