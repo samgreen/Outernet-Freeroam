@@ -145,6 +145,18 @@
 
 "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]" = "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]"
 
+"Give yourself a weapon." = "Give yourself a weapon."
+
 "/goto [Part of name or PlayerID]" = "/goto [Part of name or PlayerID]"
 
+"Spawn a vehicle." = "Spawn a vehicle."
+
+"Teleport to a player or minigame." = "Teleport to a player or minigame."
+
 "/skin [SkinID]" = "/skin [SkinID]"
+
+"Set your player skin." = "Set your player skin."
+
+"Add nitrous to your vehicle." = "Add nitrous to your vehicle."
+
+"Fully repair your vehicle." = "Fully repair your vehicle."
