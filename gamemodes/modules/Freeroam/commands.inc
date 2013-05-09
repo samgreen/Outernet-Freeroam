@@ -11,12 +11,12 @@ YCMD:gun(playerid, params[], help) {
 
 	// Parse the weapon name or ID
 	if (sscanf(params, "k<weapon>", weapon)) {
-		SendClientUsage(playerid, this.Description);
+		// SendClientUsage(playerid, this.Description);
 		return 1;	
 	} else {
 		// Give the player this weapon with default ammo, and activate it
-		GivePlayerWeapon(playerid, gun, AMMO);
-    	SetWeapon(playerid, gun);
+		GivePlayerWeapon(playerid, weapon, AMMO);
+    	SetPlayerArmedWeapon(playerid, weapon);
 	}
         
 	return 1;
@@ -27,8 +27,8 @@ YCMD:veh(playerid, params[], help) {
     new vehicleID, color1, color2;
 
     // Parse the name or vehicle ID, and the first color, followed by an optional color
-    if (sscanf(params, "k<vehicle>I(0)I(0)", vehicleID, color1, color2) {
-    	SendClientUsage(playerid, this.Description);
+    if (sscanf(params, "k<vehicle>I(0)I(0)", vehicleID, color1, color2)) {
+    	// SendClientUsage(playerid, this.Description);
     	return 1;
     } else {
 
@@ -40,7 +40,7 @@ YCMD:veh(playerid, params[], help) {
 	    	RemovePlayerFromVehicle(oldVehicleID);
 	    	DestroyVehicle(oldVehicleID);
 	    }
-	    
+
     	// Ensure it is a valid vehicle ID
     	if (vehicleID != 1) {
 
@@ -56,9 +56,11 @@ YCMD:veh(playerid, params[], help) {
             LinkVehicleToInterior(newCarID, interior);
 
             // Finally place this player in their vehicle
-            PutPlayerInVehicle(playerid, carid, 0);
+            PutPlayerInVehicle(playerid, newCarID, 0);
     	}
     }
+
+    return 1;
 }
 
 CommandDescription<goto> = @"/goto [Part of name or PlayerID]";
@@ -67,7 +69,7 @@ YCMD:goto(playerid, params[], help) {
 
 	// Parse the player name or ID
 	if (sscanf(params, "k<player_name>", otherPlayerID)) {
-		SendClientUsage(playerid, this.Description);
+		// SendClientUsage(playerid, this.Description);
     	return 1;
 	} else {
 		// Retrieve the other player's position
