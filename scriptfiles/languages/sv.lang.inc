@@ -146,3 +146,5 @@
 "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]" = "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]"
 
 "/goto [Part of name or PlayerID]" = "/goto [Part of name or PlayerID]"
+
+"/skin [SkinID]" = "/skin [SkinID]"

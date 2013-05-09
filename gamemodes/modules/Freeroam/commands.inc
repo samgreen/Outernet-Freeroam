@@ -84,3 +84,23 @@ YCMD:goto(playerid, params[], help) {
 
 	return 1;
 }
+
+CommandDescription<skin> = @"/skin [SkinID]";
+YCMD:skin(playerid, params[], help) {
+    new skinID;
+
+    // Parse the player name or ID
+    if (sscanf(params, "i", skinID)) {
+        // SendClientUsage(playerid, this.Description);
+        return 1;
+    } else {
+        if (!IsValidSkin(skinID)) {
+            SendClientMessage(playerid, COLOR_COMMAND_ERROR, "Invalid Skin ID.");
+            return 1;
+        } else {
+            SetPlayerSkin(playerid, skinID);
+        }
+    }
+
+    return 1;
+}
