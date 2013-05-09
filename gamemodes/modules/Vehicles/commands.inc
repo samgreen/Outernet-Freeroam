@@ -23,10 +23,7 @@ YCMD:veh(playerid, params[], help) {
  //     DestroyVehicle(oldVehicleID);
  //    }
 
-    // Ensure it is a valid vehicle ID
-    if (vehicleID != 1) {
-        SpawnAndEnterVehicle(playerid, vehicleID, color1, color2);
-    }
+    SpawnAndEnterVehicle(playerid, vehicleID, color1, color2);
 
     return 1;
 }
