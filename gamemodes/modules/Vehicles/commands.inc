@@ -4,6 +4,33 @@
  > Priority: 0
  */
 
+CommandDescription<veh> = @"Spawn a vehicle.";
+YCMD:veh(playerid, params[], help) {
+    new vehicleID, color1, color2;
+
+    // Parse the name or vehicle ID, and the first color, followed by an optional color
+    if (sscanf(params, "k<vehicle>I(0)I(0)", vehicleID, color1, color2)) {
+        SendClientUsage(playerid, "/veh [Vehicle ID] [Color 1 (Optional)] [Color 2 (Optional)]");
+        return 1;
+    } 
+
+    // // Ensure the player isn't already in a vehicle
+ //    if (IsPlayerInAnyVehicle(playerid)) { 
+ //     // Save their current vehicle ID
+ //     new oldVehicleID = GetPlayerVehicleID(playerid);
+ //     // Remove the player from the vehicle and destroy it
+ //     RemovePlayerFromVehicle(oldVehicleID);
+ //     DestroyVehicle(oldVehicleID);
+ //    }
+
+    // Ensure it is a valid vehicle ID
+    if (vehicleID != 1) {
+        SpawnAndEnterVehicle(playerid, vehicleID, color1, color2);
+    }
+
+    return 1;
+}
+
 CommandDescription<paint> = @"A shiny new paint job for your vehicle.";
 YCMD:paint(playerid, params[], help) {
     new color1, color2;

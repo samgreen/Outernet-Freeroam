@@ -155,6 +155,10 @@
 
 "/skin [SkinID]" = "/skin [SkinID]"
 
+"Teleport to a player." = "Teleport to a player."
+
+"Join a minigame." = "Join a minigame."
+
 "Set your player skin." = "Set your player skin."
 
 "Add nitrous to your vehicle." = "Add nitrous to your vehicle."

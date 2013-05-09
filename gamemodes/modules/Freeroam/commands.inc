@@ -22,34 +22,7 @@ YCMD:gun(playerid, params[], help) {
 	return 1;
 }
 
-CommandDescription<veh> = @"Spawn a vehicle.";
-YCMD:veh(playerid, params[], help) {
-    new vehicleID, color1, color2;
-
-    // Parse the name or vehicle ID, and the first color, followed by an optional color
-    if (sscanf(params, "k<vehicle>I(0)I(0)", vehicleID, color1, color2)) {
-    	SendClientUsage(playerid, "/veh [Vehicle ID] [Color 1 (Optional)] [Color 2 (Optional)]");
-    	return 1;
-    } 
-
-	// // Ensure the player isn't already in a vehicle
- //    if (IsPlayerInAnyVehicle(playerid)) { 
- //    	// Save their current vehicle ID
- //    	new oldVehicleID = GetPlayerVehicleID(playerid);
- //    	// Remove the player from the vehicle and destroy it
- //    	RemovePlayerFromVehicle(oldVehicleID);
- //    	DestroyVehicle(oldVehicleID);
- //    }
-
-	// Ensure it is a valid vehicle ID
-	if (vehicleID != 1) {
-		SpawnAndEnterVehicle(playerid, vehicleID, color1, color2);
-	}
-
-    return 1;
-}
-
-CommandDescription<goto> = @"Teleport to a player or minigame.";
+CommandDescription<goto> = @"Teleport to a player.";
 YCMD:goto(playerid, params[], help) {
 	new otherPlayerID;
 
@@ -69,6 +42,27 @@ YCMD:goto(playerid, params[], help) {
     SetPlayerVirtualWorld(playerid, GetPlayerVirtualWorld(otherPlayerID));
 
 	return 1;
+}
+
+CommandDescription<join> = @"Join a minigame.";
+YCMD:join(playerid, params[], help) {
+    new string:gameName[10];
+
+    // Parse the player name or ID
+    if (sscanf(params, "s[10]", gameName)) {
+        SendClientUsage(playerid, "/join [OJ | King | Gumball]");
+        return 1;
+    }
+
+    if (strcmp(gameName, "OJ", true)) {
+        SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the OJ minigame.");
+    } else if (strcmp(gameName, "King", true)) {
+        SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the King of the Hill minigame.");
+    } else if (strcmp(gameName, "Gumball", true)) {
+        SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the Gumball minigame.");
+    }
+
+    return 1;
 }
 
 CommandDescription<skin> = @"Set your player skin.";
