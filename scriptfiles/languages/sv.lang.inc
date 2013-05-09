@@ -145,7 +145,11 @@
 
 "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]" = "/veh [Car ID] [Color 1 (Optional)] [Color 2 (Optional)]"
 
+"Banish a player to purgatory." = "Banish a player to purgatory."
+
 "Give yourself a weapon." = "Give yourself a weapon."
+
+"Remove a player from purgatory." = "Remove a player from purgatory."
 
 "/goto [Part of name or PlayerID]" = "/goto [Part of name or PlayerID]"
 

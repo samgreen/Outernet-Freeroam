@@ -38,7 +38,7 @@ stock SpawnAndEnterVehicle(playerid, vehicleid, color1 = 1, color2 = 1) {
     // Get the current interior and link the vehicle to it
     new interior = GetPlayerInterior(playerid);
     LinkVehicleToInterior(newCarID, interior);
-
+    
     // Finally place this player in their vehicle
     PutPlayerInVehicle(playerid, newCarID, 0);
 }

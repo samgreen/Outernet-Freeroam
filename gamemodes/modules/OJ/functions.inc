@@ -5,17 +5,19 @@
  */
 
 stock this.Setup() {
-	this.active = true;
 	this.SpawnCars();
 
 	// Enable global markers for all players
 	ShowPlayerMarkers(PLAYER_MARKERS_MODE_GLOBAL);
+
+	this.active = true;
 }
 
 stock this.Teardown() {
 	this.RemoveCars();
-	this.active = false;
 	this.playerOJ = -1;
+
+	this.active = false;
 }
 
 stock this.TeleportTo(playerid) {
@@ -24,6 +26,8 @@ stock this.TeleportTo(playerid) {
 }
 
 stock this.SpawnCars() {
+	this.vehicleCount = 0;
+
 	// OJ Cars (first person in the Bronco is OJ)
 	this.SaveCarID(CreateVehicle(489,-316.0997,1502.8499,75.9185,231.3118,1,1)); 	// OJ Bronco
 

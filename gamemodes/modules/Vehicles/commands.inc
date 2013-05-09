@@ -82,5 +82,6 @@ YCMD:fix(playerid, params[], help) {
     } else {
         SetVehicleHealth(vehicleID, 1000.0);
     }
+    
     return 1;
 }
