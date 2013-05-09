@@ -7,5 +7,15 @@
  */
 
 {
-	AddPlayerClass(0, 100.5171, 1104.9548, 13.6094, 221.8533, 0, 0, 0, 0, 0, 0);
+	// Outside of Ammu-Nation in Blueberry
+	new ammunationSpawn = CreateSpawnLocation(
+		.interior = 0,
+		.x        = 240.0390,
+		.y        = -178.2970,
+		.z        = 1.5781,
+		.rot      = 90.0
+	);
+	
+	// Ammu-nation guy skin
+	CreateClass(179, ammunationSpawn);
 }
