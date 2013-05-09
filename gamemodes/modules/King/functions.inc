@@ -9,6 +9,8 @@ stock this.Setup() {
 
 	this.locationIndex = random(4);
     this.active = true;
+
+    return 1;
 }
 
 stock this.Teardown() {

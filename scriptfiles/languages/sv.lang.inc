@@ -170,3 +170,13 @@
 "A shiny new paint job for your vehicle." = "A shiny new paint job for your vehicle."
 
 "Fully repair your vehicle." = "Fully repair your vehicle."
+
+"Local of out of character." = "Local of out of character."
+
+"Emote an action." = "Emote an action."
+
+"Shout something at the top of your lungs." = "Shout something at the top of your lungs."
+
+"Create an advertisement for all players to see." = "Create an advertisement for all players to see."
+
+"Server wide out of character chat." = "Server wide out of character chat."

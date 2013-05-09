@@ -27,6 +27,10 @@ const PBP.DEFAULT_RETURN<OnPlayerCommandText> = 0;
 #define COLOR_GENERIC_INFO   0x7CB3CDFF
 #define COLOR_GENERIC_ERROR  0xCC2A41FF
 
+#define COLOR_WHITE          0xFFFFFFFF
+#define COLOR_OOC            COLOR_WHITE
+#define COLOR_EMOTE          COLOR_WHITE
+
 /* ----------------------------------------------------------------------------
     Include files
    --------------------------------------------------------------------------*/
