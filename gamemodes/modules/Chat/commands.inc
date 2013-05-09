@@ -30,6 +30,13 @@ YCMD:ad(playerid, params[], help) {
 
 CommandDescription<o> = @"Server wide out of character chat.";
 YCMD:o(playerid, params[], help) {
+	new text[128];
+	if (sscanf(params, "s[128]", text)) {
+        SendClientUsage(playerid, "/o [Out of Character text]");
+        return 1;
+    } 
+
+	SendClientMessageToAll(COLOR_WHITE, "(( %s ))", text);
     
     return 1;
 }
