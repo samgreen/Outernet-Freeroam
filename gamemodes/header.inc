@@ -28,8 +28,19 @@ const PBP.DEFAULT_RETURN<OnPlayerCommandText> = 0;
 #define COLOR_GENERIC_ERROR  0xCC2A41FF
 
 #define COLOR_WHITE          0xFFFFFFFF
+#define COLOR_MAGENTA        0xFF00FFFF
+#define COLOR_GRAY           0xB4B5B7FF
+#define COLOR_GREEN          0x33AA33AA
+#define COLOR_RED            0xAA3333AA
+#define COLOR_YELLOW         0xFFFF00AA
+#define COLOR_PURPLE         0xC2A2DAAA
+#define COLOR_BLACK          0x000000FF
+#define COLOR_TURQUOISE      0x48D1CCFF
+#define COLOR_GOLD           0xFFD700FF
+#define COLOR_BLUE           0x3399FFAA
+
 #define COLOR_OOC            COLOR_WHITE
-#define COLOR_EMOTE          COLOR_WHITE
+#define COLOR_EMOTE          COLOR_PURPLE
 
 /* ----------------------------------------------------------------------------
     Include files
