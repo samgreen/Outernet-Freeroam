@@ -1120,9 +1120,9 @@ EOD;
 		
 		$pawnc = new PAWNC();
 		
-		$pawnc->base_dir           = 'gamemodes';
-		$pawnc->input_file         = 'gamemodes/main.pwn';
-		$pawnc->output_file        = 'gamemodes/main.amx';
+		$pawnc->base_dir           = 'filterscripts';
+		$pawnc->input_file         = 'filterscripts/Freeroam.pwn';
+		$pawnc->output_file        = 'filterscripts/Freeroam.amx';
 		$pawnc->include_dir        = 'include';
 		$pawnc->debug              = $this->cfg['debug_level'];
 		$pawnc->list_file          = false;

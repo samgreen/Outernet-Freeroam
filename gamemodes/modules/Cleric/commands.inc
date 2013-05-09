@@ -2,7 +2,7 @@
  * Cleric/commands.inc
  *
  > Priority: 0
-*/
+ */
 
 
 // Protect (/prot) - Restores the target’s armor.

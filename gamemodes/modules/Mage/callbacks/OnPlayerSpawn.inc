@@ -9,5 +9,5 @@
 {
 	// The brawler spawns with 100 HP and 100 + (10 * Level) Armor.
 	SetPlayerHealth(playerid, 100);
-	SetPlayerArmor(playerid, 10); // 10 * pLevel
+	SetPlayerArmour(playerid, 10); // 10 * pLevel
 }

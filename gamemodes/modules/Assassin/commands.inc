@@ -2,7 +2,7 @@
  * Assassin/commands.inc
  *
  > Priority: 0
-*/
+ */
 
 // Sneak (Level 1) (/sneak) - Camouflages the assassin in the world for a maximum of 6 + (1.5 * Level) seconds. 
 // The effect may be cancelled early. Activate sneak effect when assassin crouches?

@@ -11,6 +11,8 @@
 	// Reset the player info
 	memset(Player.Info[playerid], sizeof(Player.Info[]), 0);
 	
+	// Every player starts as level 1
+	Player.Info[playerid][Level] = 1;
 	Player.Info[playerid][IP] = GetIP(playerid);
 	
 	GetPlayerName(playerid, Player.Info[playerid][Name], MAX_PLAYER_NAME);

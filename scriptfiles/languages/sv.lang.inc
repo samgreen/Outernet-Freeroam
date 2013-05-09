@@ -125,6 +125,18 @@
 
 "Show the config editor." = "Visa konfigurerings redigeraren."
 
+"" = ""
+
 "* Show the config editor." = "* Visa konfigurerings redigeraren."
 
+"Stomp the ground with a mighty fury, causing damage to all nearby players." = "Stomp the ground with a mighty fury, causing damage to all nearby players."
+
 "Armour" = "Kroppsskydd"
+
+"Ignore all damage as you are overtaken by a berzerk rage." = "Ignore all damage as you are overtaken by a berzerk rage."
+
+"If you are killed while revenge is active, your soul shatters causing massive damage to all nearby players." = "If you are killed while revenge is active, your soul shatters causing massive damage to all nearby players."
+
+"You become infused with the spirit of the bear, your next successful attack will always be a fatal blow." = "You become infused with the spirit of the bear, your next successful attack will always be a fatal blow."
+
+"Summon a mighty steed and ride forth in to battle." = "Summon a mighty steed and ride forth in to battle."
