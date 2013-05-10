@@ -10,7 +10,7 @@ stock this.Setup() {
 	this.SpawnCars();
 
 	// Enable global markers for all players
-	ShowPlayerMarkers(PLAYER_MARKERS_MODE_GLOBAL);
+
 
 	this.active = true;
 
@@ -22,21 +22,26 @@ stock this.Teardown() {
 	this.playerOJ = -1;
 
 	// Disable player markers
-	ShowPlayerMarkers(PLAYER_MARKERS_MODE_GLOBAL);
 
 	this.active = false;
 
 	return 1;
 }
 
-stock this.TeleportTo(playerid) {
+stock this.Join(playerid) {
 	// If this is the first player, set up the game
 	if (!this.active) this.Setup();
 
-	// OJ Spawn point
-	SetPlayerPos(playerid, -353.8105, 1531.0774, 75.3594);
+	Group_SetPlayer(MINIGAME_OJ, playerid, true);
+
+	this.TeleportTo(playerid);
 
 	SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the OJ minigame.");
+}
+
+stock this.TeleportTo(playerid) {
+	// OJ Spawn point
+	SetPlayerPos(playerid, -353.8105, 1531.0774, 75.3594);
 }
 
 stock this.SpawnCars() {

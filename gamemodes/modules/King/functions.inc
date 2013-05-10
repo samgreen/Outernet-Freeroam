@@ -18,10 +18,18 @@ stock this.Teardown() {
 	this.active = false;
 }
 
-stock this.TeleportTo(playerid) {
+stock this.Join(playerid) {
     // If this is the first player, we need to setup the game
     if (!this.active) this.Setup();
 
+    Group_SetPlayer(MINIGAME_KING, playerid, true);
+
+    this.TeleportTo(playerid);
+
+    SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the King of the Hill minigame.");
+}
+
+stock this.TeleportTo(playerid) {
 	// King of the Mountain teleports (different building-tops of varying size/complexity:
 	switch(this.locationIndex) {
         case 0: SetPlayerPos(playerid,1576.1821,-1241.3708,277.8767);
@@ -30,7 +38,5 @@ stock this.TeleportTo(playerid) {
         case 3: SetPlayerPos(playerid,-1809.5675,574.1158,234.8906); 
         case 4: SetPlayerPos(playerid,-353.8105,1531.0774,75.3594);
     }
-
-    SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the King of the Hill minigame.");
 }
 

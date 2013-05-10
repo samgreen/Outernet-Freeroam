@@ -55,11 +55,11 @@ YCMD:join(playerid, params[], help) {
     }
 
     if (strcmp(gameName, "OJ", true)) {
-        OJ.TeleportTo(playerid);
+        OJ.Join(playerid);
     } else if (strcmp(gameName, "King", true)) {
-        King.TeleportTo(playerid);
+        King.Join(playerid);
     } else if (strcmp(gameName, "Gumball", true)) {
-        Gumball.TeleportTo(playerid);
+        Gumball.Join(playerid);
     }
 
     return 1;

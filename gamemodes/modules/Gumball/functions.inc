@@ -29,14 +29,19 @@ stock this.SetupCheckpoints() {
 
 }
 
-stock this.TeleportTo(playerid) {
+stock this.Join(playerid) {
     // If this is the first player, we need to setup the game
     if (!this.active) this.Setup();
 
-    SetPlayerPos(playerid, -2465.5481, 2247.0857, 4.5688);
+    Group_SetPlayer(MINIGAME_GUMBALL, playerid, true);
 
+    this.TeleportTo(playerid);
 
     SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the Gumball minigame.");
+}
+
+stock this.TeleportTo(playerid) {
+    SetPlayerPos(playerid, -2465.5481, 2247.0857, 4.5688);
 }
 
 stock this.SpawnCars() {
