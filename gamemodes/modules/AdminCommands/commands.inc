@@ -66,3 +66,16 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
 
     return 1;
 }
+
+CommandDescription<weather> = @"Updates the current weather status.";
+YCMD(GROUP_MANAGEMENT, GROUP_RCON):weather(playerid, params[], help) {
+    new weatherID;
+    if (sscanf(params, "d", checkPlayerID) || help) {
+        SendClientUsage(playerid, "/weatherID [Player name or ID]");
+        return 1;
+    }
+
+    SetWeather(weatherID);
+
+    return 1;
+}
