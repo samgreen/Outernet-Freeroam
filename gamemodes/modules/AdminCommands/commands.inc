@@ -70,7 +70,7 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
 CommandDescription<weather> = @"Updates the current weather status.";
 YCMD(GROUP_MANAGEMENT, GROUP_RCON):weather(playerid, params[], help) {
     new weatherID;
-    if (sscanf(params, "d", checkPlayerID) || help) {
+    if (sscanf(params, "d", weatherID) || help) {
         SendClientUsage(playerid, "/weatherID [Player name or ID]");
         return 1;
     }

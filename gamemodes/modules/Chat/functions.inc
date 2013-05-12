@@ -8,6 +8,10 @@ stock SendClientUsage(playerid, string:usageText[], color = COLOR_COMMAND_USAGE)
 	SendClientMessage(playerid, color, usageText);
 }
 
+stock SendClientMessageEmote(senderid, string:message[]) {
+	SendClientMessageNearby(senderid, message, COLOR_EMOTE);
+}
+
 stock SendClientMessageNearby(senderid, string:message[], color = COLOR_WHITE) {
 	foreach (new playerid : Player) {
 		if (playerid == senderid) continue;

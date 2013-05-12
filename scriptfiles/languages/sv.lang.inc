@@ -173,6 +173,8 @@
 
 "Add nitrous to your vehicle." = "Add nitrous to your vehicle."
 
+"Updates the current weather status." = "Updates the current weather status."
+
 "A shiny new paint job for your vehicle." = "A shiny new paint job for your vehicle."
 
 "Fully repair your vehicle." = "Fully repair your vehicle."

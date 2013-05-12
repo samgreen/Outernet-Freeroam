@@ -21,14 +21,23 @@ YCMD:me(playerid, params[], help) {
 
     new message[128];
     format(message, sizeof(message), "%s (ID: %d)", emoteText, playerid);
-    SendClientMessageNearby(playerid, message, COLOR_EMOTE);
+    SendClientMessageEmote(playerid, message);
 
     return 1;
 }
 
 CommandDescription<shout> = @"Shout something at the top of your lungs.";
 YCMD:shout(playerid, params[], help) {
-    
+    new shoutText[128];
+    if (sscanf(params, "s[128]", shoutText) || help) {
+        SendClientUsage(playerid, "/shout [Text]");
+        return 1;
+    }
+
+    new message[128];
+    format(message, sizeof(message), "%p shouts, \"%s\"!", playerid, shoutText);
+    SendClientMessageRadius(playerid, message, COLOR_RED, 75.0);
+
     return 1;
 }
 
