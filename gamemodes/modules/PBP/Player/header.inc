@@ -6,6 +6,7 @@
 
 enum e_PLAYER_INFO {
 	      IP,
+	      Location[128],
 	 bool:IsAdmin,
 	      Name[MAX_PLAYER_NAME],
 	      Level,
@@ -60,7 +61,7 @@ RegisterConfigVariable: this.UsePlayerPedAnimations;
 RegisterConfigVariable: this.TeleportDuration;
 RegisterConfigVariable: this.TeleportTimerStep;
 
-
+forward HandleGeoHTTPRequest(playerid, response_code, location[]);
 forward bool:this.IsInAnyOfGroups(playerid, Group:...);
 forward      this.CheckForNewAdmins();
 forward      this.Teleport(playerid, Float:x, Float:y, Float:z, Float:rot = 0.0, interior = -1, world = -1);

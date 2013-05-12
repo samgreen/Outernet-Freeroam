@@ -16,4 +16,8 @@
 	Player.Info[playerid][IP] = GetIP(playerid);
 	
 	GetPlayerName(playerid, Player.Info[playerid][Name], MAX_PLAYER_NAME);
+
+	new req[128];
+	format(req, sizeof(req),"geoip.freevar.com/?IP=%s", Player.Info[playerid][IP]); 
+	HTTP(playerid, HTTP_GET, req, "", "GEOIP_HTTPREQUEST");
 }

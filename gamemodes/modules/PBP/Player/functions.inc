@@ -161,6 +161,17 @@ stock this.SetPlayerName(playerid, name[]) {
 	return retval;
 }
 
+// The GEO-IP Callback.
+public HandleGeoHTTPRequest(playerid, response_code, location[]) {
+    if (response_code == 200) {
+		memcpy(this.Info[playerid][Location], location, 0, strlen(location));
+
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 #if defined _ALS_SetPlayerName
 	#undef SetPlayerName
 #else
