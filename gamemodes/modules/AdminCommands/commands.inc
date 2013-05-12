@@ -39,3 +39,24 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):unbanish(playerid, params[], help) {
 
     return 1;
 }
+
+CommandDescription<check> = @"Retrieve information about a player.";
+YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
+    new checkPlayerID;
+    if (sscanf(params, "k<player_name>", checkPlayerID)) {
+        SendClientUsage(playerid, "/check [Player name or ID]");
+        return 1;
+    }
+
+    new ip[16];
+    GetPlayerIp(checkPlayerID, ip, sizeof(ip));
+
+    new checkPlayerName[MAX_PLAYER_NAME];
+    GetPlayerName(playerid, checkPlayerName, sizeof(checkPlayerName));
+
+    new checkPlayerPing = GetPlayerPing(checkPlayerID);
+
+    SendClientMessage(playerid, COLOR_GENERIC_INFO, "%s - IP: %s - Ping: %d", checkPlayerName, ip, checkPlayerPing);
+
+    return 1;
+}
