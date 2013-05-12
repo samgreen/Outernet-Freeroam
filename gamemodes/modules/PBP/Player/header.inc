@@ -21,6 +21,8 @@ enum e_PLAYER_INFO {
 	      Ping,
 	      Keys,
 	      SpecialAction,
+	      bool:IsCuffed,
+	      bool:IsSubmitting,
 	      CameraMode,
 	Float:VX, Float:VY, Float:VZ,
 	      SurfingVehicle,
