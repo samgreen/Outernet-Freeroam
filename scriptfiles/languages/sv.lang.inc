@@ -163,7 +163,11 @@
 
 "Join a minigame." = "Join a minigame."
 
+"Retrieve information about a player." = "Retrieve information about a player."
+
 "Set your player skin." = "Set your player skin."
+
+"List all available animations." = "List all available animations."
 
 "Add nitrous to your vehicle." = "Add nitrous to your vehicle."
 

@@ -10,9 +10,19 @@ YCMD:b(playerid, params[], help) {
     return 1;
 }
 
+
 CommandDescription<me> = @"Emote an action.";
 YCMD:me(playerid, params[], help) {
-    
+    new emoteText[128];
+    if (sscanf(params, "s[128]", emoteText) || help) {
+        SendClientUsage(playerid, "/me [emote]");
+        return 1;
+    }
+
+    new message[128];
+    format(message, sizeof(message), "%s (ID: %d)", emoteText, playerid);
+    SendClientMessageNearby(playerid, message, COLOR_EMOTE);
+
     return 1;
 }
 
