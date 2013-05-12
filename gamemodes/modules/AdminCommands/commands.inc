@@ -62,13 +62,7 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
         return 1;
     }
 
-    new ip[16];
-    GetPlayerIp(checkPlayerID, ip, sizeof(ip));
-
-    new checkPlayerName[MAX_PLAYER_NAME];
-    GetPlayerName(playerid, checkPlayerName, sizeof(checkPlayerName));
-
-    SendClientMessage(playerid, COLOR_GENERIC_INFO, "%s - IP: %s - Ping: %d", checkPlayerName, ip, Player.Info[playerid][Ping]);
+    SendClientMessage(playerid, COLOR_GENERIC_INFO, "%s - IP: %s (%s) - Ping: %d", Player.Info[playerid][Name], Player.Info[playerid][IP], Player.Info[playerid][Location], Player.Info[playerid][Ping]);
 
     return 1;
 }
