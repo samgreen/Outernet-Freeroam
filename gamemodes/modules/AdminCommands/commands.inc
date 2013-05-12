@@ -40,6 +40,20 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):unbanish(playerid, params[], help) {
     return 1;
 }
 
+CommandDescription<kick> = @"Kicks the player from the server temporarily.";
+YCMD(GROUP_MANAGEMENT, GROUP_RCON):kick(playerid, params[], help) {
+    new kickPlayerID;
+    // Parse the player name or ID
+    if (sscanf(params, "k<player_name>", kickPlayerID) || help) {
+        SendClientUsage(playerid, "/kick [Player name or ID]");
+        return 1;
+    } 
+    
+    Kick(kickPlayerID);
+
+    return 1;
+}
+
 CommandDescription<check> = @"Retrieve information about a player.";
 YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
     new checkPlayerID;

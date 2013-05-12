@@ -165,6 +165,8 @@
 
 "Retrieve information about a player." = "Retrieve information about a player."
 
+"Kicks the player from the server temporarily." = "Kicks the player from the server temporarily."
+
 "Set your player skin." = "Set your player skin."
 
 "List all available animations." = "List all available animations."
