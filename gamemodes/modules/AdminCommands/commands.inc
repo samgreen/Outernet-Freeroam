@@ -8,7 +8,7 @@ CommandDescription<banish> = @"Banish a player to purgatory.";
 YCMD(GROUP_MANAGEMENT, GROUP_RCON):banish(playerid, params[], help) {
 	new banishPlayerID;
 	// Parse the player name or ID
-    if (sscanf(params, "k<player_name>", banishPlayerID)) {
+    if (sscanf(params, "k<player_name>", banishPlayerID) || help) {
         SendClientUsage(playerid, "/banish [Player name or ID]");
         return 1;
     } 
@@ -26,7 +26,7 @@ CommandDescription<unbanish> = @"Remove a player from purgatory.";
 YCMD(GROUP_MANAGEMENT, GROUP_RCON):unbanish(playerid, params[], help) {
 	new banishPlayerID;
 	// Parse the player name or ID
-    if (sscanf(params, "k<player_name>", banishPlayerID)) {
+    if (sscanf(params, "k<player_name>", banishPlayerID) || help) {
         SendClientUsage(playerid, "/unbanish [Player name or ID]");
         return 1;
     } 
@@ -43,7 +43,7 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):unbanish(playerid, params[], help) {
 CommandDescription<check> = @"Retrieve information about a player.";
 YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
     new checkPlayerID;
-    if (sscanf(params, "k<player_name>", checkPlayerID)) {
+    if (sscanf(params, "k<player_name>", checkPlayerID) || help) {
         SendClientUsage(playerid, "/check [Player name or ID]");
         return 1;
     }
@@ -54,9 +54,7 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):check(playerid, params[], help) {
     new checkPlayerName[MAX_PLAYER_NAME];
     GetPlayerName(playerid, checkPlayerName, sizeof(checkPlayerName));
 
-    new checkPlayerPing = GetPlayerPing(checkPlayerID);
-
-    SendClientMessage(playerid, COLOR_GENERIC_INFO, "%s - IP: %s - Ping: %d", checkPlayerName, ip, checkPlayerPing);
+    SendClientMessage(playerid, COLOR_GENERIC_INFO, "%s - IP: %s - Ping: %d", checkPlayerName, ip, Player.Info[playerid][Ping]);
 
     return 1;
 }
