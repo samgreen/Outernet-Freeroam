@@ -9,9 +9,6 @@ stock this.Setup() {
 
 	this.SpawnCars();
 
-	// Enable global markers for all players
-
-
 	this.active = true;
 
 	return 1;

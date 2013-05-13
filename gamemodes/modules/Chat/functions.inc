@@ -23,7 +23,7 @@ stock SendClientMessageNearby(senderid, string:message[], color = COLOR_WHITE) {
 
 stock SendClientMessageRadius(senderid, string:message[], color = COLOR_WHITE, Float:radius = 20.0) {
 	foreach (new playerid : Player) {
-		if (playerid == senderid) continue;
+		// if (playerid == senderid) continue;
 
 		if (IsPlayerInRangeOfPoint(playerid, radius, Player.Info[senderid][X], Player.Info[senderid][Y], Player.Info[senderid][Z])) {
 			SendClientMessage(playerid, color, message);

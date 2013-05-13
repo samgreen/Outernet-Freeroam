@@ -27,21 +27,43 @@ YCMD:goto(playerid, params[], help) {
 	new otherPlayerID;
 
 	// Parse the player name or ID
-	if (sscanf(params, "k<player_name>", otherPlayerID)) {
-		SendClientUsage(playerid, "/goto [Part of name or PlayerID]");
+	if (sscanf(params, "K<player_name>", otherPlayerID)) {
+        SendClientUsage(playerid, "/goto [Part of name or PlayerID]");
     	return 1;
-	} 
+	}
 
-	// Retrieve the other player's position
+    // Retrieve the other player's position
     new Float:x, Float:y, Float:z;
     GetPlayerPos(otherPlayerID, x, y, z);
 
-    // Set this player's position, interior, and virtual world to match the other player
-    SetPlayerPos(playerid, x, y, z);
-    SetPlayerInterior(playerid, GetPlayerInterior(otherPlayerID));
-    SetPlayerVirtualWorld(playerid, GetPlayerVirtualWorld(otherPlayerID));
+    this.TeleportToWithVehicle(playerid, x, y, z);
 
 	return 1;
+}
+
+CommandDescription<gotop> = @"Teleport to a place.";
+YCMD:gotop(playerid, params[], help) {
+    new placeName[32];
+
+    // Parse the player name or ID
+    if (sscanf(params, "s[32]", placeName)) {
+        SendClientUsage(playerid, "/goto [Part of name or PlayerID]");
+        SendClientUsage(playerid, "places: taxi corp1 corp2 pd lsair sfair lvair pier underwater boat mafjump skyscraper coalminer");
+        SendClientUsage(playerid, "chiliad drift wheelarch locolow transfender halfpipe bridgetop lombardstreet skatepark casino skydive");
+        SendClientUsage(playerid, "smokespot fc lb eq boneyard process cropdust trucker");
+        return 1;
+    }
+
+    this.TeleportToPlace(playerid, placeName);
+
+    return 1;
+}
+
+CommandDescription<joinoj> = @"Join the OJ minigame.";
+YCMD:joinoj(playerid, params[], help) {
+    OJ.Join(playerid);
+
+    return 1;
 }
 
 CommandDescription<join> = @"Join a minigame.";
@@ -54,11 +76,11 @@ YCMD:join(playerid, params[], help) {
         return 1;
     }
 
-    if (strcmp(gameName, "OJ", true)) {
+    if (strcmp(gameName, "OJ", true) == 0) {
         OJ.Join(playerid);
-    } else if (strcmp(gameName, "King", true)) {
+    } else if (strcmp(gameName, "King", true) == 0) {
         King.Join(playerid);
-    } else if (strcmp(gameName, "Gumball", true)) {
+    } else if (strcmp(gameName, "Gumball", true) == 0) {
         Gumball.Join(playerid);
     }
 
@@ -77,7 +99,6 @@ YCMD:skin(playerid, params[], help) {
 
     if (!IsValidSkin(skinID)) {
         SendClientMessage(playerid, COLOR_COMMAND_ERROR, "Invalid Skin ID.");
-        return 1;
     } else {
         SetPlayerSkin(playerid, skinID);
     }

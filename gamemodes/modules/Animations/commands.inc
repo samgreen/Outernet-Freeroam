@@ -316,7 +316,7 @@ YCMD:smoke(playerid, params[], help)
 YCMD:run(playerid, params[], help)
 {
 	new runID;
-	if (sscanf(params, "d", runID) || 0 < runID < 8 || help) {
+	if (sscanf(params, "d", runID) || help) {
         SendClientUsage(playerid, "/run [1 - 7]");
         return 1;
     }
@@ -356,7 +356,7 @@ YCMD:run(playerid, params[], help)
 YCMD:walk(playerid, params[], help)
 {
 	new walkID;
-	if (sscanf(params, "d", walkID) || 0 < walkID < 10 || help) {
+	if (sscanf(params, "d", walkID) || help) {
         SendClientUsage(playerid, "/walk [1 - 9]");
         return 1;
     }

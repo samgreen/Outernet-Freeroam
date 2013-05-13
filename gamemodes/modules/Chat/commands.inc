@@ -6,16 +6,40 @@
 
 CommandDescription<b> = @"Local of out of character.";
 YCMD:b(playerid, params[], help) {
-    
+    new oocText[128];
+    if (sscanf(params, "s[128]", oocText) || help) {
+        SendClientUsage(playerid, "/b [Local OOC Text]");
+        return 1;
+    }
+
+    new message[128];
+    format(message, sizeof(message), "(( %p: %s ))", playerid, oocText);
+    SendClientMessageRadius(playerid, message, COLOR_WHITE, 25.0);
+
     return 1;
 }
 
 
-CommandDescription<me> = @"Emote an action.";
+CommandDescription<me> = @"Emote a character action.";
 YCMD:me(playerid, params[], help) {
     new emoteText[128];
     if (sscanf(params, "s[128]", emoteText) || help) {
         SendClientUsage(playerid, "/me [emote]");
+        return 1;
+    }
+
+    new message[128];
+    format(message, sizeof(message), "%p %s (ID: %d)", playerid, emoteText, playerid);
+    SendClientMessageEmote(playerid, message);
+
+    return 1;
+}
+
+CommandDescription<do> = @"Emote an action.";
+YCMD:do(playerid, params[], help) {
+    new emoteText[128];
+    if (sscanf(params, "s[128]", emoteText) || help) {
+        SendClientUsage(playerid, "/do [emote]");
         return 1;
     }
 

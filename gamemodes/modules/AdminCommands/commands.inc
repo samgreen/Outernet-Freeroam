@@ -47,7 +47,7 @@ YCMD(GROUP_MANAGEMENT, GROUP_RCON):kick(playerid, params[], help) {
     if (sscanf(params, "k<player_name>", kickPlayerID) || help) {
         SendClientUsage(playerid, "/kick [Player name or ID]");
         return 1;
-    } 
+    }
     
     Kick(kickPlayerID);
 

@@ -79,6 +79,7 @@ YCMD:cb(playerid, params[], help)
 		}
 
 		foreach (new otherPlayerID : Player) {
+			// Check if the players are on the same channel
 		    if (this.OnSameChannel(playerid, otherPlayerID)) {
 				SendClientMessage(otherPlayerID, -1, "{00FF00}[CB]{FF8000} %p: {FFFFFF}%s", playerid, messageText);
 			}
@@ -99,6 +100,7 @@ YCMD:cbalert(playerid, params[], help)
 		}
 
 		foreach (new otherPlayerID : Player) {
+			// Check if the players are on the same channel
 		    if (this.OnSameChannel(playerid, otherPlayerID)) {
 				GameTextForPlayer(otherPlayerID, alertText, MyTime(0, 0, 5), 6);
 				SendClientMessage(otherPlayerID, -1, "{00FF00}[CB ALERT]{FF8000} %p", playerid);
