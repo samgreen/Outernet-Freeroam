@@ -11,7 +11,7 @@ YCMD:gun(playerid, params[], help) {
 
 	// Parse the weapon name or ID
 	if (sscanf(params, "k<weapon>", weapon)) {
-		SendClientUsage(playerid, "/givegun [Part of name or PlayerID] [Weapon name/ID]");
+		SendClientUsage(playerid, "/gun [Part of name or PlayerID] [Weapon name/ID]");
 		return 1;	
 	}
 
