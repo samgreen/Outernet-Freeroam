@@ -55,7 +55,7 @@ YCMD:o(playerid, params[], help) {
         return 1;
     } 
 
-	SendClientMessageToAll(COLOR_WHITE, "(( %s ))", text);
+	SendClientMessageToAll(COLOR_WHITE, "(( %p: %s ))", playerid, text);
     
     return 1;
 }
