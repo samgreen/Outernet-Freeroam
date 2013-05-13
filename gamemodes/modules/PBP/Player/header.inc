@@ -5,7 +5,7 @@
  */
 
 enum e_PLAYER_INFO {
-	      IP,
+	      IP[16],
 	      Location[128],
 	 bool:IsAdmin,
 	      Name[MAX_PLAYER_NAME],
