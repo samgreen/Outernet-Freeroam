@@ -9,7 +9,7 @@ stock this.LogLevel(level, string:message[], va_args<>) {
 	new debugLine[MAX_LINE_LENGTH];
 	va_format(debugLine, sizeof(debugLine), message, va_start<2>);
 	// Combine the line with the debug level
-	printf("[DEBUG - %s] %s\n", this.LEVELS[level], debugLine);
+	printf("[DEBUG - %s] %s", this.LEVELS[level], debugLine);
 }
 
 stock this.Info(string:message[], va_args<>) {
