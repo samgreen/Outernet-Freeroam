@@ -12,6 +12,8 @@ stock this.Join(playerid) {
     // First, create the textdraw
     this.statusText[playerid] = CreatePlayerTextDraw(playerid, 638.0, 2.0, "Freeroam");
     PlayerTextDrawAlignment(playerid, PlayerText:this.statusText[playerid], 3);
+    PlayerTextDrawFont(playerid, PlayerText:this.statusText[playerid], 3);
+    PlayerTextDrawColor(playerid, PlayerText:this.statusText[playerid], COLOR_YELLOW);
     PlayerTextDrawShow(playerid, PlayerText:this.statusText[playerid]);
 }
 
