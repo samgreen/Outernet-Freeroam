@@ -5,7 +5,7 @@
  */
 
 CommandDescription<veh> = @"Spawn a vehicle.";
-YCMD:veh(playerid, params[], help) {
+YCMD(GROUP_FREEROAM):veh(playerid, params[], help) {
     new vehicleID, color1, color2;
 
     // Parse the name or vehicle ID, and the first color, followed by an optional color
@@ -56,12 +56,6 @@ YCMD:eject(playerid, params[], help) {
     return 1;
 }
 
-
-/*
-// Is the player in a vehicle, and driving it?
-
-*/
-
 CommandDescription<paint> = @"A shiny new paint job for your vehicle.";
 YCMD:paint(playerid, params[], help) {
     new color1, color2;
@@ -99,6 +93,10 @@ YCMD:nos(playerid, params[], help) {
     // Add the NOS component to this vehicle
     AddVehicleComponent(vehicleID, COMPONENT_NOS);
 
+    new emoteText[128];
+    format(emoteText, sizeof(emoteText), "%p modifies the %v with nitrous.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
+    SendClientMessageEmote(playerid, emoteText);
+
     return 1;
 }
 
@@ -116,6 +114,10 @@ YCMD:fix(playerid, params[], help) {
     } else {
         SetVehicleHealth(vehicleID, 1000.0);
     }
-    
+
+    new emoteText[128];
+    format(emoteText, sizeof(emoteText), "%p repairs the %s.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
+    SendClientMessageEmote(playerid, emoteText);
+
     return 1;
 }
