@@ -8,5 +8,7 @@
 
  {
  	Command_AddAltNamed("veh", "v");
+ 	Command_AddAltNamed("paint", "colorcar");
+ 	Command_AddAltNamed("paint", "color");
  }
 
