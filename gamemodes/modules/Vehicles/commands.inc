@@ -12,21 +12,55 @@ YCMD:veh(playerid, params[], help) {
     if (sscanf(params, "k<vehicle>I(0)I(0)", vehicleID, color1, color2)) {
         SendClientUsage(playerid, "/veh [Vehicle ID] [Color 1 (Optional)] [Color 2 (Optional)]");
         return 1;
-    } 
+    }
 
-    // // Ensure the player isn't already in a vehicle
- //    if (IsPlayerInAnyVehicle(playerid)) { 
- //     // Save their current vehicle ID
- //     new oldVehicleID = GetPlayerVehicleID(playerid);
- //     // Remove the player from the vehicle and destroy it
- //     RemovePlayerFromVehicle(oldVehicleID);
- //     DestroyVehicle(oldVehicleID);
- //    }
+    new oldVehicleID = GetPlayerVehicleID(playerid);
+    if (oldVehicleID > 0) {
+        // Remove the player from the vehicle and destroy it
+        // RemovePlayerFromVehicle(oldVehicleID);
+        DestroyVehicle(oldVehicleID);
+    }
 
     SpawnAndEnterVehicle(playerid, vehicleID, color1, color2);
 
     return 1;
 }
+
+CommandDescription<eject> = @"Eject a player from a vehicle you are driving.";
+YCMD:eject(playerid, params[], help) {
+    new ejectPlayerID;
+
+    // Parse the name or vehicle ID, and the first color, followed by an optional color
+    if (sscanf(params, "k<player_name>I(0)I(0)", ejectPlayerID)) {
+        SendClientUsage(playerid, "/eject [Player Name or ID]");
+        return 1;
+    }
+
+    // Ensure the player is driving a vehicle
+    if (GetPlayerState(playerid) == PLAYER_STATE_DRIVER) { 
+    
+        // Are the player, and the player to be ejected in the same vehicle?
+        if (GetPlayerVehicleID(playerid) == GetPlayerVehicleID(ejectPlayerID)) {
+            
+            // Remove the player from their vehicle
+            RemovePlayerFromVehicle(ejectPlayerID);
+            
+            new emoteText[128];
+            format(emoteText, sizeof(emoteText), "%s opens the door and shoves %s out of the vehicle.", Player.Info[playerid][Name], Player.Info[ejectPlayerID][Name]);
+            SendClientMessageEmote(playerid, emoteText);
+            
+        } else return SendClientError(playerid, "That player must be in your car to eject them.");
+        
+    } else return SendClientError(playerid, "You must be driving a car to eject a player.");
+
+    return 1;
+}
+
+
+/*
+// Is the player in a vehicle, and driving it?
+
+*/
 
 CommandDescription<paint> = @"A shiny new paint job for your vehicle.";
 YCMD:paint(playerid, params[], help) {
