@@ -34,6 +34,8 @@ stock this.Join(playerid) {
 	this.TeleportTo(playerid);
 
 	SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the OJ minigame.");
+
+	return 1;
 }
 
 stock this.TeleportTo(playerid) {
