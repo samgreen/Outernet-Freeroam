@@ -5,7 +5,7 @@
  */
 
 CommandDescription<b> = @"Local of out of character.";
-YCMD:b(playerid, params[], help) {
+YCMD(GROUP_ROLEPLAY):b(playerid, params[], help) {
     new oocText[128];
     if (sscanf(params, "s[128]", oocText) || help) {
         SendClientUsage(playerid, "/b [Local OOC Text]");
@@ -21,7 +21,7 @@ YCMD:b(playerid, params[], help) {
 
 
 CommandDescription<me> = @"Emote a character action.";
-YCMD:me(playerid, params[], help) {
+YCMD(GROUP_ROLEPLAY):me(playerid, params[], help) {
     new emoteText[128];
     if (sscanf(params, "s[128]", emoteText) || help) {
         SendClientUsage(playerid, "/me [emote]");
@@ -36,7 +36,7 @@ YCMD:me(playerid, params[], help) {
 }
 
 CommandDescription<do> = @"Emote an action.";
-YCMD:do(playerid, params[], help) {
+YCMD(GROUP_ROLEPLAY):do(playerid, params[], help) {
     new emoteText[128];
     if (sscanf(params, "s[128]", emoteText) || help) {
         SendClientUsage(playerid, "/do [emote]");
@@ -51,7 +51,7 @@ YCMD:do(playerid, params[], help) {
 }
 
 CommandDescription<shout> = @"Shout something at the top of your lungs.";
-YCMD:shout(playerid, params[], help) {
+YCMD(GROUP_ROLEPLAY):shout(playerid, params[], help) {
     new shoutText[128];
     if (sscanf(params, "s[128]", shoutText) || help) {
         SendClientUsage(playerid, "/shout [Text]");
@@ -66,13 +66,13 @@ YCMD:shout(playerid, params[], help) {
 }
 
 CommandDescription<ad> = @"Create an advertisement for all players to see.";
-YCMD:ad(playerid, params[], help) {
+YCMD(GROUP_ROLEPLAY):ad(playerid, params[], help) {
     
     return 1;
 }
 
 CommandDescription<o> = @"Server wide out of character chat.";
-YCMD:o(playerid, params[], help) {
+YCMD(GROUP_ROLEPLAY):o(playerid, params[], help) {
 	new text[128];
 	if (sscanf(params, "s[128]", text)) {
         SendClientUsage(playerid, "/o [Out of Character text]");
