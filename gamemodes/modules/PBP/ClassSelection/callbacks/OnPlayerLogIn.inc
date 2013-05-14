@@ -1,7 +1,7 @@
 /*!
  * PBP/ClassSelection/callbacks/OnPlayerLogin.inc
  *
- * OnPlayerLogin(playerid, uid)
+ * OnPlayerLogin(playerid, yid)
  *
  > Priority: 0
  */

@@ -16,6 +16,14 @@ stock SetPlayerDynamicVehicle(playerid, index, vehicleid) {
 	return this.DYNAMIC_CARS[playerid][index] = vehicleid;
 }
 
+stock GetPlayerVehicleName(playerid) {
+    return GetVehicleName(GetPlayerVehicleModel(playerid));
+}
+
+stock GetPlayerVehicleModel(playerid) {
+    return GetVehicleModel(GetPlayerVehicleID(playerid));
+}
+
 stock SpawnAndEnterVehicle(playerid, vehicleid, color1 = 1, color2 = 1) {
 	if (!CanPlayerSpawnVehicle(playerid)) {
 		DestroyVehicle(this.DYNAMIC_CARS[playerid][0]);

@@ -77,7 +77,7 @@ YCMD:paint(playerid, params[], help) {
 
 CommandDescription<nos> = @"Add nitrous to your vehicle.";
 YCMD:nos(playerid, params[], help) {
-    if (OJ.active) {
+    if (OJ.In(playerid)) {
         SendClientMessage(playerid, COLOR_COMMAND_ERROR, "You may not use NOS while the OJ minigame is active.");
         return 1;
     }
@@ -90,14 +90,14 @@ YCMD:nos(playerid, params[], help) {
 
     // Add the NOS component to this vehicle
     AddVehicleComponent(vehicleID, COMPONENT_NOS);
-    SendClientMessageEmote(playerid, "%p modifies the %v with nitrous.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
+    SendClientMessageEmote(playerid, "%s modifies the %v with nitrous.", Player.Info[playerid][Name], GetPlayerVehicleName(playerid));
 
     return 1;
 }
 
 CommandDescription<fix> = @"Fully repair your vehicle.";
 YCMD:fix(playerid, params[], help) {
-    if (OJ.active) {
+    if (OJ.In(playerid)) {
         SendClientMessage(playerid, COLOR_COMMAND_ERROR, "You may not repair your vehicle while the OJ minigame is active.");
         return 1;
     }
@@ -110,7 +110,7 @@ YCMD:fix(playerid, params[], help) {
 
     // Fully repair the vehicle
     SetVehicleHealth(vehicleID, 1000.0);
-    SendClientMessageEmote(playerid, "%p repairs the %v.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
+    SendClientMessageEmote(playerid, "%s repairs the %v.", Player.Info[playerid][Name], GetPlayerVehicleName(playerid));
 
     return 1;
 }

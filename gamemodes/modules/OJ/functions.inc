@@ -38,6 +38,10 @@ stock this.Join(playerid) {
 	return 1;
 }
 
+stock bool:this.In(playerid) {
+	return Group_GetPlayer(MINIGAME_OJ, playerid);
+}
+
 stock this.Quit(playerid) {
 	Group_SetPlayer(MINIGAME_OJ, playerid, false);
 }

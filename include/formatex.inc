@@ -446,7 +446,6 @@ FormatSpecifier<'w'>(output[], weapon) {
 }
 
 // Vehicle name
-FormatSpecifier<'v'>(output[], modelid) {
 	static const
 		s_VehicleNames[][] = {	
 			{!"Landstalker"      }, {!"Bravura"          }, {!"Buffalo"          }, {!"Linerunner"       },
@@ -504,7 +503,12 @@ FormatSpecifier<'v'>(output[], modelid) {
 			{!"Stair Trailer"    }, {!"Boxville"         }, {!"Farm Plow"        }, {!"Utility Trailer"  }
 		}
 	;
-	
+
+stock GetVehicleName(modelid) {
+	return s_VehicleNames[modelid];
+}
+
+FormatSpecifier<'v'>(output[], modelid) {
 	if (0 <= (modelid -= 400) < sizeof(s_VehicleNames))
 		strcat(output, s_VehicleNames[modelid]);
 	else

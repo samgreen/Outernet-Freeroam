@@ -29,6 +29,10 @@ stock this.Join(playerid) {
     SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the King of the Hill minigame.");
 }
 
+stock bool:this.In(playerid) {
+    return Group_GetPlayer(MINIGAME_OJ, playerid);
+}
+
 stock this.Quit(playerid) {
     Group_SetPlayer(MINIGAME_KING, playerid, false);
 }

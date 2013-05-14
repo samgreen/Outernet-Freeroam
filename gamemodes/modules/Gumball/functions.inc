@@ -29,6 +29,10 @@ stock this.SetupCheckpoints() {
 
 }
 
+stock bool:this.In(playerid) {
+	return Group_GetPlayer(MINIGAME_OJ, playerid);
+}
+
 stock this.Join(playerid) {
     // If this is the first player, we need to setup the game
     if (!this.active) this.Setup();
