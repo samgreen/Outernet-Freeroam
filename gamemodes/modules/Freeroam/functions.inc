@@ -7,22 +7,22 @@
 stock this.Join(playerid) {
     Roleplay.Quit(playerid);
 
-    this.InFreeroam[playerid] = true;
+    Group_SetPlayer(GROUP_FREEROAM, playerid, true);
 
     // First, create the textdraw
-    this.statusText[playerid] = CreatePlayerTextDraw(playerid, 640.0, 0.0, "Freeroam");
+    this.statusText[playerid] = CreatePlayerTextDraw(playerid, 638.0, 2.0, "Freeroam");
     PlayerTextDrawAlignment(playerid, PlayerText:this.statusText[playerid], 3);
     PlayerTextDrawShow(playerid, PlayerText:this.statusText[playerid]);
 }
 
 stock this.Quit(playerid) {
-    this.InFreeroam[playerid] = false;
+    Group_SetPlayer(GROUP_FREEROAM, playerid, false);
 
     PlayerTextDrawDestroy(playerid, PlayerText:this.statusText[playerid]);
 }
 
 stock bool:this.In(playerid) {
-    return this.InFreeroam[playerid];
+    return Group_GetPlayer(GROUP_FREEROAM, playerid);
 }
 
 stock this.TeleportToPlace(playerid, placeName[]) {
