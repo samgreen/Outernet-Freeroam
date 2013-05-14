@@ -44,10 +44,8 @@ YCMD:eject(playerid, params[], help) {
             
             // Remove the player from their vehicle
             RemovePlayerFromVehicle(ejectPlayerID);
-            
-            new emoteText[128];
-            format(emoteText, sizeof(emoteText), "%s opens the door and shoves %s out of the vehicle.", Player.Info[playerid][Name], Player.Info[ejectPlayerID][Name]);
-            SendClientMessageEmote(playerid, emoteText);
+
+            SendClientMessageEmote(playerid, "%s opens the door and shoves %s out of the vehicle.", Player.Info[playerid][Name], Player.Info[ejectPlayerID][Name]);
             
         } else return SendClientError(playerid, "That player must be in your car to eject them.");
         
@@ -92,10 +90,7 @@ YCMD:nos(playerid, params[], help) {
 
     // Add the NOS component to this vehicle
     AddVehicleComponent(vehicleID, COMPONENT_NOS);
-
-    new emoteText[128];
-    format(emoteText, sizeof(emoteText), "%p modifies the %v with nitrous.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
-    SendClientMessageEmote(playerid, emoteText);
+    SendClientMessageEmote(playerid, "%p modifies the %v with nitrous.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
 
     return 1;
 }
@@ -111,13 +106,11 @@ YCMD:fix(playerid, params[], help) {
     if (vehicleID == 0) {
         SendClientUsage(playerid, "You must be in a vehicle to repair it.");
         return 1;
-    } else {
-        SetVehicleHealth(vehicleID, 1000.0);
     }
 
-    new emoteText[128];
-    format(emoteText, sizeof(emoteText), "%p repairs the %s.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
-    SendClientMessageEmote(playerid, emoteText);
+    // Fully repair the vehicle
+    SetVehicleHealth(vehicleID, 1000.0);
+    SendClientMessageEmote(playerid, "%p repairs the %v.", playerid, GetVehicleModel(GetPlayerVehicleID(playerid)));
 
     return 1;
 }

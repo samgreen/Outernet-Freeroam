@@ -18,10 +18,8 @@ YCMD(GROUP_ROLEPLAY):dice(playerid, params[], help) {
         SendClientUsage(playerid, "/dice [Number of Sides]");
         return 1;
     }
-
-    new string:emoteText[128];
-    format(emoteText, sizeof(emoteText), "%p rolls a %d-sided die. The result is a %d", numSides, random(numSides));
-    SendClientMessageEmote(playerid, emoteText);
+    
+    SendClientMessageEmote(playerid, "%p rolls a %d-sided die. The result is a %d", numSides, random(numSides));
 
     return 1;
 }

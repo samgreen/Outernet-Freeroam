@@ -28,9 +28,7 @@ YCMD(GROUP_ROLEPLAY):me(playerid, params[], help) {
         return 1;
     }
 
-    new message[128];
-    format(message, sizeof(message), "%p %s (ID: %d)", playerid, emoteText, playerid);
-    SendClientMessageEmote(playerid, message);
+    SendClientMessageEmote(playerid, "%p %s (ID: %d)", playerid, emoteText, playerid);
 
     return 1;
 }
@@ -43,9 +41,7 @@ YCMD(GROUP_ROLEPLAY):do(playerid, params[], help) {
         return 1;
     }
 
-    new message[128];
-    format(message, sizeof(message), "%s (ID: %d)", emoteText, playerid);
-    SendClientMessageEmote(playerid, message);
+    SendClientMessageEmote(playerid, "%s (ID: %d)", emoteText, playerid);
 
     return 1;
 }
