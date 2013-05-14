@@ -22,18 +22,21 @@ stock SendClientHelp(playerid, string:helpText[], color = COLOR_COMMAND_HELP) {
 	return 1;
 }
 
-stock SendClientMessageEmote(senderid, string:message[]) {
-	SendClientMessageNearby(senderid, message, COLOR_EMOTE);
+stock SendClientMessageEmote(senderid, string:message[], Float:radius = 25.0, color = COLOR_EMOTE) {
+
+	foreach (new playerid : Player) {
+		// Skip freeroam players for emotes
+		if (Group_GetPlayer(GROUP_FREEROAM, playerid)) continue;
+
+		if (IsPlayerInRangeOfPoint(playerid, radius, Player.Info[senderid][X], Player.Info[senderid][Y], Player.Info[senderid][Z])) {
+			SendClientMessage(playerid, color, message);
+		}
+	}
 
 	return 1;
 }
 
 stock SendClientMessageNearby(senderid, string:message[], color = COLOR_WHITE) {
-	foreach (new playerid : Player) {
-		if (playerid == senderid) continue;
-
-		SendClientMessage(playerid, color, message);
-	}
 	SendClientMessageRadius(senderid, message, color, 25.0);
 
 	return 1;
@@ -41,8 +44,6 @@ stock SendClientMessageNearby(senderid, string:message[], color = COLOR_WHITE) {
 
 stock SendClientMessageRadius(senderid, string:message[], color = COLOR_WHITE, Float:radius = 20.0) {
 	foreach (new playerid : Player) {
-		// if (playerid == senderid) continue;
-
 		if (IsPlayerInRangeOfPoint(playerid, radius, Player.Info[senderid][X], Player.Info[senderid][Y], Player.Info[senderid][Z])) {
 			SendClientMessage(playerid, color, message);
 		}
