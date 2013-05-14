@@ -163,6 +163,8 @@ stock this.SetPlayerName(playerid, name[]) {
 
 // The GEO-IP Callback.
 public HandleGeoHTTPRequest(playerid, response_code, location[]) {
+	printf("HandleGeoHTTPRequest - playerid: %d / response_code: %d / location: %s", playerid, response_code, location);
+
     if (response_code == 200) {
 		memcpy(this.Info[playerid][Location], location, 0, strlen(location));
 
