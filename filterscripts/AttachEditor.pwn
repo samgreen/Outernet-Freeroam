@@ -310,7 +310,7 @@ public OnPlayerSpawn(playerid) {
 }
 
 public OnFilterScriptInit() {
-	return print("[Attachment Editor] Loaded.\r\n~ a creation of bren. ~");
+	return print("[Attachment Editor] Loaded.\r");
 }
 
 public OnFilterScriptExit() {

@@ -105,6 +105,30 @@ public OnPlayerUpdate(playerid){
 	return true;
 }
 
+stock AttachPlayerWeapon(weaponIndex, bone, Float:x, Float:y, Float:z, Float:rotX, Float:rotY, Float:rotZ) {
+	new objectSlot = GetWeaponObjectSlot(weaponIndex);
+
+	if (weaponid[weaponIndex] && weaponammo[weaponIndex] > 0){
+		if (pArmedWeapon != weaponid[weaponIndex]){
+			if (!IsPlayerAttachedObjectSlotUsed(playerid, objectSlot)){
+				SetPlayerAttachedObject(playerid, objectSlot, GetWeaponModel(weaponid[weaponIndex]), 1, x, y, z, rotX, rotY, rotZ, 1.0, 1.0, 1.0);
+			}
+		}
+		else {
+			if (IsPlayerAttachedObjectSlotUsed(playerid, objectSlot)){
+				RemovePlayerAttachedObject(playerid, objectSlot);
+			}
+		}
+	}
+	else if (IsPlayerAttachedObjectSlotUsed(playerid, objectSlot)){
+		RemovePlayerAttachedObject(playerid, objectSlot);
+	}
+}
+
+stock GetWeaponObjectSlot(weaponIndex) {
+	return weaponIndex - 3;
+}
+
 stock GetWeaponModel(weaponid) {
 	switch (weaponid) {
 	    case 1:
