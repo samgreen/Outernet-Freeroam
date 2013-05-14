@@ -18,4 +18,7 @@
 	
 	// Ammu-nation guy skin
 	CreateClass(179, ammunationSpawn);
+
+	Command_AddAltNamed("joinfr", "freeroam");
+	Command_AddAltNamed("joinfr", "roam");
 }

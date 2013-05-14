@@ -4,6 +4,27 @@
  > Priority: 0
  */
 
+stock this.Join(playerid) {
+    Roleplay.Quit(playerid);
+
+    this.InFreeroam[playerid] = true;
+
+    // First, create the textdraw
+    this.statusText[playerid] = CreatePlayerTextDraw(playerid, 640.0, 0.0, "Freeroam");
+    PlayerTextDrawAlignment(playerid, PlayerText:this.statusText[playerid], 3);
+    PlayerTextDrawShow(playerid, PlayerText:this.statusText[playerid]);
+}
+
+stock this.Quit(playerid) {
+    this.InFreeroam[playerid] = false;
+
+    PlayerTextDrawDestroy(playerid, PlayerText:this.statusText[playerid]);
+}
+
+stock bool:this.In(playerid) {
+    return this.InFreeroam[playerid];
+}
+
 stock this.TeleportToPlace(playerid, placeName[]) {
 
 	if (strcmp(placeName, "smokespot", true) == 0) {

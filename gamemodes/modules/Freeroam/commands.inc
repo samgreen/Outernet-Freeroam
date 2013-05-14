@@ -4,9 +4,15 @@
  > Priority: 0
  */
 
+CommandDescription<joinfr> = @"Join the Freeroam world.";
+YCMD:joinfr(playerid, params[], help) {
+    this.Join(playerid);
+
+    return 1;
+}
 
 CommandDescription<gun> = @"Give yourself a weapon.";
-YCMD:gun(playerid, params[], help) {
+YCMD(GROUP_FREEROAM, GROUP_MANAGEMENT, GROUP_RCON):gun(playerid, params[], help) {
 	new weapon;
 
 	// Parse the weapon name or ID
@@ -23,7 +29,7 @@ YCMD:gun(playerid, params[], help) {
 }
 
 CommandDescription<goto> = @"Teleport to a player.";
-YCMD:goto(playerid, params[], help) {
+YCMD(GROUP_FREEROAM, GROUP_MANAGEMENT, GROUP_RCON):goto(playerid, params[], help) {
 	new otherPlayerID;
 
 	// Parse the player name or ID
@@ -42,7 +48,7 @@ YCMD:goto(playerid, params[], help) {
 }
 
 CommandDescription<gotop> = @"Teleport to a place.";
-YCMD:gotop(playerid, params[], help) {
+YCMD(GROUP_FREEROAM, GROUP_MANAGEMENT, GROUP_RCON):gotop(playerid, params[], help) {
     new placeName[32];
 
     // Parse the player name or ID
@@ -60,14 +66,14 @@ YCMD:gotop(playerid, params[], help) {
 }
 
 CommandDescription<joinoj> = @"Join the OJ minigame.";
-YCMD:joinoj(playerid, params[], help) {
+YCMD(GROUP_FREEROAM, GROUP_MANAGEMENT, GROUP_RCON):joinoj(playerid, params[], help) {
     OJ.Join(playerid);
 
     return 1;
 }
 
 CommandDescription<join> = @"Join a minigame.";
-YCMD:join(playerid, params[], help) {
+YCMD(GROUP_FREEROAM, GROUP_MANAGEMENT, GROUP_RCON):join(playerid, params[], help) {
     new string:gameName[10];
 
     // Parse the player name or ID
@@ -88,7 +94,7 @@ YCMD:join(playerid, params[], help) {
 }
 
 CommandDescription<skin> = @"Set your player skin.";
-YCMD:skin(playerid, params[], help) {
+YCMD(GROUP_FREEROAM, GROUP_MANAGEMENT, GROUP_RCON):skin(playerid, params[], help) {
     new skinID;
 
     // Parse the player name or ID
