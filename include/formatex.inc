@@ -505,7 +505,10 @@ FormatSpecifier<'w'>(output[], weapon) {
 	;
 
 stock GetVehicleName(modelid) {
-	return s_VehicleNames[modelid];
+	if (0 <= (modelid -= 400) < sizeof(s_VehicleNames))
+		return s_VehicleNames[modelid];
+	else
+		return "Unknown";
 }
 
 FormatSpecifier<'v'>(output[], modelid) {
