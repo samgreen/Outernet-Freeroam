@@ -5,5 +5,6 @@
  */
 
 YCMD:debuglog(playerid, params[], help) {
-
+	
+	return 1;
 }

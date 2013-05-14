@@ -8,6 +8,7 @@
 #define MAX_LINE_LENGTH 150
 
 new this.lines[MAX_LINES][MAX_LINE_LENGTH];
+new this.lastLine = 0;
 
 new this.LEVELS[][] = {
 	"Info",
