@@ -4,7 +4,7 @@
  * Example:
  *   static slots =: GetMaxPlayers();
  */
-#define static%1=:%2;  static %1;{static _@init;if(!_@init){_@init=1;(%1)=%2;}}
+#define static%1=:%2;  static %1;{static _@init;if (!_@init){_@init=1;(%1)=%2;}}
 
 /*
  * Direct access to an y_malloc string.
