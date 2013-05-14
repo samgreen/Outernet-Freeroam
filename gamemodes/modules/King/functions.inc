@@ -29,6 +29,10 @@ stock this.Join(playerid) {
     SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the King of the Hill minigame.");
 }
 
+stock this.Quit(playerid) {
+    Group_SetPlayer(MINIGAME_KING, playerid, false);
+}
+
 stock this.TeleportTo(playerid) {
 	// King of the Mountain teleports (different building-tops of varying size/complexity:
 	switch(this.locationIndex) {

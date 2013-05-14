@@ -25,8 +25,8 @@ stock SendClientHelp(playerid, string:helpText[], color = COLOR_COMMAND_HELP) {
 stock SendClientMessageEmote(senderid, string:message[], va_args<>) {
 	new string:emoteText[128];
 	va_format(emoteText, sizeof(emoteText), message, va_start<2>);
-
-	foreach (new playerid : Player) {
+	
+	foreach (Group(GROUP_ROLEPLAY), playerid) {
 		// Skip freeroam players for emotes
 		if (Group_GetPlayer(GROUP_FREEROAM, playerid)) continue;
 

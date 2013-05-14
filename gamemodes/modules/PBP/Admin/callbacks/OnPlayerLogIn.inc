@@ -1,7 +1,7 @@
 /*!
  * PBP/Admin/callbacks/OnPlayerLogin.inc
  *
- * OnPlayerLogin(playerid, yid)
+ * OnPlayerLogin(playerid, uid)
  *
  > Priority: 0
  */

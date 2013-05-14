@@ -38,6 +38,10 @@ stock this.Join(playerid) {
 	return 1;
 }
 
+stock this.Quit(playerid) {
+	Group_SetPlayer(MINIGAME_OJ, playerid, false);
+}
+
 stock this.TeleportTo(playerid) {
 	// OJ Spawn point
 	SetPlayerPos(playerid, -353.8105, 1531.0774, 75.3594);

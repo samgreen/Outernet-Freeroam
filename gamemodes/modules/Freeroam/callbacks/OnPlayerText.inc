@@ -7,9 +7,10 @@
  */
 
 {
-	foreach (new otherPlayerID : Player) {
-		if (this.In(otherPlayerID)) {
-			SendClientMessage(playerid, COLOR_WHITE, text);
-		}
+	if (this.In(playerid)) {
+		// foreach (Group(GROUP_FREEROAM), playerid) {
+		// 	SendClientMessage(playerid, COLOR_WHITE, text);
+		// }
+		return 1;
 	}
 }

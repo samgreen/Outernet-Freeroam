@@ -40,6 +40,10 @@ stock this.Join(playerid) {
     SendClientMessage(playerid, COLOR_COMMAND_INFO, "You have joined the Gumball minigame.");
 }
 
+stock this.Quit(playerid) {
+	Group_SetPlayer(MINIGAME_GUMBALL, playerid, false);
+}
+
 stock this.TeleportTo(playerid) {
     SetPlayerPos(playerid, -2465.5481, 2247.0857, 4.5688);
 }
