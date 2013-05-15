@@ -95,6 +95,16 @@ YCMD:nos(playerid, params[], help) {
     return 1;
 }
 
+CommandDescription<neon> = @"Add neon lights";
+YCMD:neon(playerid, params[], help) {
+    if (GetPlayerState(playerid) != PLAYER_STATE_DRIVER) {
+        SendClientUsage(playerid, "You must be in a vehicle to add neon.");
+        return 1;
+    }
+
+    ShowPlayerDialog(playerid, DIALOG_ID_NEON, DIALOG_STYLE_LIST, "Available Neon Colors", "{1500FF}Blue\n{FF0000}Red\n{40FF00}Green\nWhite\n{FF00FB}Pink\n{DDFF00}Yellow\n{9900FF}Remove Neon", "Select", "Cancel");
+}
+
 CommandDescription<fix> = @"Fully repair your vehicle.";
 YCMD:fix(playerid, params[], help) {
     if (OJ.In(playerid)) {
