@@ -56,23 +56,18 @@ stock SpawnAndEnterVehicle(playerid, vehicleid, color1 = 1, color2 = 1) {
 //  Neons - Paul Walker style RP
 //
 stock CreateNeons(playerid, modelID) {
-    new neons[] = {
-        CreateObject(modelID, 0, 0, 0, 0, 0, 0),
-        CreateObject(modelID, 0, 0, 0, 0, 0, 0)
-    };
+    SetPVarInt(playerid, "neon1", CreateObject(modelID, 0, 0, 0, 0, 0, 0));
+    SetPVarInt(playerid, "neon2", CreateObject(modelID, 0, 0, 0, 0, 0, 0));
 
-    SetPVarInt(playerid, "neon1", neons[0]);
-    SetPVarInt(playerid, "neon2", neons[1]);
-
-    AttachObjectToVehicle(neons[0], GetPlayerVehicleID(playerid), -0.8, 0.0, -0.70, 0.0, 0.0, 0.0);
-    AttachObjectToVehicle(neons[1], GetPlayerVehicleID(playerid),  0.8, 0.0, -0.70, 0.0, 0.0, 0.0);
+    AttachObjectToVehicle(GetPVarInt(playerid, "neon1"), GetPlayerVehicleID(playerid), -0.8, 0.0, -0.70, 0.0, 0.0, 0.0);
+    AttachObjectToVehicle(GetPVarInt(playerid, "neon2"), GetPlayerVehicleID(playerid),  0.8, 0.0, -0.70, 0.0, 0.0, 0.0);
 }
 
-stock DestroyNeon(playerid) {
+stock DestroyNeons(playerid) {
     DestroyObject(GetPVarInt(playerid, "neon2")); 
     DestroyObject(GetPVarInt(playerid, "neon1"));
 }
 
 stock ShowNeonDialog(playerid) {
-    ShowPlayerDialog(playerid, DIALOG_ID_NEON, DIALOG_STYLE_LIST, "Available Neon Colors", "{FF0000}Red\n{1500FF}Blue\n{40FF00}Green\n{DDFF00}Yellow\nWhite\n{FF00FB}Pink\n{9900FF}Remove Neon", "Select", "Cancel");
+    ShowPlayerDialog(playerid, DIALOG_ID_NEON, DIALOG_STYLE_LIST, "Available Neon Colors", "{FF0000}Red\n{40FF00}Green\n{1500FF}Blue\n{FF00FB}Pink\nWhite\n{9900FF}{DDFF00}Yellow\nRemove Neon", "Select", "Cancel");
 }

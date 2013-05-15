@@ -19,13 +19,15 @@
         			CreateNeons(playerid, modelID);
 
         			SendClientMessageEmote(playerid, "%s modifies the %v with neon lights.", Player.Info[playerid][Name], GetPlayerVehicleName(playerid));
+
+                    return 1;
         		} else {
 
         			DestroyNeons(playerid);
+
+                    return 1;
         		}
             }
 		}
 	}
-
-  	return 1;
 }
